@@ -37,7 +37,10 @@
   user = utilities.getUsername(str(args[0]))
   if utilities.getip() is True:
     if user:
-       return "okay can you tell me your password to save your attendance {topic=password}"
+      if utilities.checkUser(str(args[0])) is True:
+          return "You have registered"
+      else:    
+          return "okay can you tell me your password to save your attendance {topic=password}"
     else:
       return "Username not found. Please try again"
   else:

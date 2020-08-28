@@ -33,4 +33,10 @@ def getip():
     else:
         return False
     
-    
+def checkUser(user):
+    query = "SELECT * From studentattendance WHERE username = %s"
+    r = db.execute(query, (user,))
+    if r.fetchone() is None:
+        return False
+    else:
+        return True
