@@ -7,16 +7,17 @@
 
 > topic welcome
 + *
-- Hi! :) Do You want to record your attendance (yes/no) ? {topic=attend}
+-Hi! :)\nDo You want to record your attendance (yes/no) ? {topic=attend}
 < topic
 
 > topic attend
 + yes
 -Great! Please Enter your username {topic=username}
 + no
-- :( You can exit
+-:( You can exit {topic=random}
 + *
--{topic=default}
+-I'm sorry; I did not get that.\n
+^Do you still wish to take your attendance (yes/no)? {topic=attend}
 < topic
 
 
@@ -30,11 +31,6 @@
 - <call>getPassword <star> <get username></call>
 < topic
 
-> topic default 
-+ *
-- I'm sorry; I did not get that.
-^ Do you still wish to take your attendance (yes/no)? {topic=attend}
-< topic
 
 > object getUsername python
   import utilities

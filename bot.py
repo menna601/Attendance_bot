@@ -18,3 +18,11 @@ def chat(message):
 
 
 
+def reload():
+    bot.clear_uservars()
+
+def set_bot(user, data):
+    bot.set_uservars(user, data)
+
+def get_bot(user):
+    return bot.get_uservars(user)
